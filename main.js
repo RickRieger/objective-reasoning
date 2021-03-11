@@ -12,13 +12,46 @@ function isAdmin(object){
 }
 
 function getEmail(object){
-    let email = `${object.firstName.toLowerCase()}
-    .${object.lastName.toLowerCase()}@codeimmersives.com`
+    let email = ''
+    email += object.firstName.toLowerCase()
+    email +='.'
+    email += object.lastName.toLowerCase()
+    email += '@codeimmersives.com'
     return email
 }
 
+function getPlaylistLength(playList){
+    let playListLength = 0
+    
+    playListLength += playList.songs.length
+    
+    return playListLength
+}
 
+function getHardestHomework(arrayOfHomeworkAssignments){
+    let nameOfAssignment = ''
+    let minScore = arrayOfHomeworkAssignments[0].averageScore
 
+    for (const assignment of arrayOfHomeworkAssignments){
+  
+      if(assignment.averageScore <= minScore){
+        nameOfAssignment = assignment.name
+      }
+      else{
+          return nameOfAssignment
+      }
+    }
+    return nameOfAssignment
+  }
+  
+  const createPhonebook = (keys, values) => {   
+    let phoneBook = {};
+
+    for (let i = 0; i < keys.length; i++){       
+        phoneBook[keys[i]] = values[i];
+    }
+    return phoneBook
+}
 
 
 // ┌─────────────────────────────────────┐
