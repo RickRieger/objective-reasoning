@@ -1,6 +1,23 @@
 // ┌─────────────────┐
 // │ Your code here! │	
 // └─────────────────┘
+function isAdmin(object){
+    
+       if (object.userRole === 'ADMIN'){
+            return true
+        }
+        else{
+            return false
+    } 
+}
+
+function getEmail(object){
+    let email = `${object.firstName.toLowerCase()}
+    .${object.lastName.toLowerCase()}@codeimmersives.com`
+    return email
+}
+
+
 
 
 
