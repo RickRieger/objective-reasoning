@@ -1,6 +1,8 @@
 // ┌─────────────────┐
 // │ Your code here! │	
 // └─────────────────┘
+
+
 function isAdmin(object){
     
        if (object.userRole === 'ADMIN'){
@@ -10,6 +12,8 @@ function isAdmin(object){
             return false
     } 
 }
+
+
 
 function getEmail(object){
     let email = ''
@@ -29,20 +33,23 @@ function getPlaylistLength(playList){
 }
 
 function getHardestHomework(arrayOfHomeworkAssignments){
-    let nameOfAssignment = ''
-    let minScore = arrayOfHomeworkAssignments[0].averageScore
+        if (arrayOfHomeworkAssignments[0] === undefined){
+            return ''
+        }
+        let nameOfAssignment = ''
+        let minScore = arrayOfHomeworkAssignments[0].averageScore
+        for (const assignment of arrayOfHomeworkAssignments){
+      
+          if(assignment.averageScore <= minScore){
+            nameOfAssignment = assignment.name
+            minScore = assignment.averageScore
+          }
+        }
+        return nameOfAssignment
+      }
 
-    for (const assignment of arrayOfHomeworkAssignments){
-  
-      if(assignment.averageScore <= minScore){
-        nameOfAssignment = assignment.name
-      }
-      else{
-          return nameOfAssignment
-      }
-    }
-    return nameOfAssignment
-  }
+
+
   
   const createPhonebook = (keys, values) => {   
     let phoneBook = {};
